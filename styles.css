@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif; 
-    background-color: #282c34; 
+    background-color: #6b4caf; 
     color: #ffffff; 
     text-align: center;
     margin: 0;
@@ -11,7 +11,7 @@ body {
     width: auto;
     margin: 40px auto;
     padding: 30px;
-    background-color: #3c404d; 
+    background-color: #6b4caf; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
     border-radius: 15px; 
 }
@@ -28,7 +28,7 @@ h1 {
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     justify-content: center;
@@ -38,7 +38,7 @@ h1 {
 .card {
     width: 211.8px;
     height: 166.2px;
-    background-color: #565c6f;
+    background-color: #6b4caf;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -60,7 +60,7 @@ h1 {
 }
 
 #start-game {
-    background-color: #4caf50;
+    background-color: #6b4caf;
     color: white;
     padding: 12px 24px;
     border: none;
@@ -71,6 +71,6 @@ h1 {
 }
 
 #start-game:hover {
-    background-color: #43a047; /* Darker on hover */
+    background-color: #6b4caf; /* Darker on hover */
     transform: scale(1.05); /* Slightly enlarges on hover */
 }

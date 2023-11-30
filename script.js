@@ -6,17 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardsWon = [];
 
     const cardArray = [
-        { name: 'card1', img: 'images/distracted.png' },
-        { name: 'card1', img: 'images/distracted.png' },
-        { name: 'card2', img: 'images/drake.png' },
-        { name: 'card2', img: 'images/drake.png' },
-        { name: 'card3', img: 'images/fine.png' },
-        { name: 'card3', img: 'images/fine.png' },
-        { name: 'card4', img: 'images/rollsafe.png' },
-        { name: 'card4', img: 'images/rollsafe.png' },
-        { name: 'card5', img: 'images/success.png' },
-        { name: 'card5', img: 'images/success.png' },
+        { name: 'card1', img: 'images/ima1.jpeg' },
+        { name: 'card1', img: 'images/ima1.jpeg' },
+        { name: 'card2', img: 'images/ima2.jpeg' },
+        { name: 'card2', img: 'images/ima2.jpeg'},
+        { name: 'card3', img: 'images/ima3.jpeg' },
+        { name: 'card3', img: 'images/ima3.jpeg' },
+        { name: 'card4', img: 'images/ima4.jpeg' },
+        { name: 'card4', img: 'images/ima4.jpeg' },
+        { name: 'card5', img: 'images/ima5.jpeg' },
+        { name: 'card5', img: 'images/ima5.jpeg' },
+        { name: 'card6', img: 'images/ima6.jpeg' },
+        { name: 'card6', img: 'images/ima6.jpeg' },
+        { name: 'card7', img: 'images/ima7.jpeg' },
+        { name: 'card7', img: 'images/ima7.jpeg' },
+        { name: 'card8', img: 'images/ima8.jpeg' },
+        { name: 'card8', img: 'images/ima8.jpeg' },
+        { name: 'card9', img: 'images/ima9.jpeg' },
+        { name: 'card9', img: 'images/ima9.jpeg' },
+        { name: 'card10', img:'images/ima10.jpeg'},
+        { name: 'card10', img:'images/ima10.jpeg' },
         // ...add more pairs as needed
+    
     ];
 
     function shuffle(array) {
@@ -30,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i = 0; i < cardArray.length; i++) {
             const card = document.createElement('img');
-            card.setAttribute('src', 'images/blank.png');
+            card.setAttribute('src', 'images/blank.jpeg');
             card.setAttribute('data-id', i);
             card.addEventListener('click', flipCard);
             grid.appendChild(card);
@@ -61,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cards[secondCardId].removeEventListener('click', flipCard);
             cardsWon.push(cardsChosen);
         } else {
-            cards[firstCardId].setAttribute('src', 'images/blank.png');
-            cards[secondCardId].setAttribute('src', 'images/blank.png');
+            cards[firstCardId].setAttribute('src', 'images/blank.jpeg');
+            cards[secondCardId].setAttribute('src', 'images/blank.jpeg');
         }
 
         cardsChosen = [];
