@@ -83,5 +83,3 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Congratulations! You found them all!');
         }
     }
-
-  
