@@ -1,0 +1,51 @@
+import random
+
+def initialize_cards():
+    cards = list(range(1, 6)) * 2  # 10 cards with values from 1 to 5 (duplicated)
+    random.shuffle(cards)
+    return cards
+
+def display_board(board, revealed):
+    for i in range(len(board)):
+        if revealed[i]:
+            print(board[i], end=' ')
+        else:
+            print('?', end=' ')
+    print()
+
+def card_matching_game():
+    cards = initialize_cards()
+    revealed = [False] * len(cards)
+    attempts = 0
+
+    while not all(revealed):
+        display_board(cards, revealed)
+
+        try:
+            guess1 = int(input("Enter the index of the first card to flip (0-9): "))
+            guess2 = int(input("Enter the index of the second card to flip (0-9): "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if guess1 < 0 or guess1 >= len(cards) or guess2 < 0 or guess2 >= len(cards):
+            print("Invalid index. Please enter a number between 0 and 9.")
+            continue
+
+        if guess1 == guess2:
+            print("Please choose two different cards.")
+            continue
+
+        attempts += 1
+
+        if cards[guess1] == cards[guess2]:
+            print("Match found!")
+            revealed[guess1] = revealed[guess2] = True
+        else:
+            print("No match. Try again.")
+
+    print(f"Congratulations! You completed the game in {attempts} attempts.")
+
+if __name__ == "__main__":
+    print("Welcome to Victory matching game!")
+    card_matching_game()
