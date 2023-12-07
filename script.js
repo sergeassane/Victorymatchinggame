@@ -86,3 +86,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startButton.addEventListener('click', createBoard);
 });
+
+
+    // Add the audio element
+    const audio = new Audio('C:\Users\YAMEOGO\Desktop\Music\Rihanna - Diamonds.mp3');
+
+    function checkForMatch() {
+        const cards = document.querySelectorAll('#game-board img');
+        const firstCardId = cardsChosenId[0];
+        const secondCardId = cardsChosenId[1];
+
+        if (cardsChosen[0] === cardsChosen[1] && firstCardId !== secondCardId) {
+            cards[firstCardId].style.visibility = 'hidden';
+            cards[secondCardId].style.visibility = 'hidden';
+            cards[firstCardId].removeEventListener('click', flipCard);
+            cards[secondCardId].removeEventListener('click', flipCard);
+            cardsWon.push(cardsChosen);
+
+            // Play the music when a match is found
+            audio.play();
+        } else {
+            cards[firstCardId].setAttribute('src', 'images/blank.png');
+            cards[secondCardId].setAttribute('src', 'images/blank.png');
+        }
+
+        cardsChosen = [];
+        cardsChosenId = [];
+
+        if (cardsWon.length === cardArray.length / 2) {
+            alert('Congratulations! You found them all!');
+        }
+    }
+
+    // ... (rest of your code)
+
+
