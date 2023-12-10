@@ -118,6 +118,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function checkForMatch() {
+        const cards = document.querySelectorAll('#game-board img');
+        const firstCardId = cardsChosenId[0];
+        const secondCardId = cardsChosenId[1];
+    
+        if (cardsChosen[0] === cardsChosen[1] && firstCardId !== secondCardId) {
+            cards[firstCardId].style.visibility = 'hidden';
+            cards[secondCardId].style.visibility = 'hidden';
+            cards[firstCardId].removeEventListener('click', flipCard);
+            cards[secondCardId].removeEventListener('click', flipCard);
+            cardsWon.push(cardsChosen);
+        } else {
+            cards[firstCardId].setAttribute('src', 'images/blank.png');
+            cards[secondCardId].setAttribute('src', 'images/blank.png');
+            attempts--;
+            attemptsElement.textContent = `Attempts left: ${attempts}`;
+            checkGameOver(); // Check for game over after each failed attempt
+        }
+    
+        cardsChosen = [];
+        cardsChosenId = [];
+    
+        if (cardsWon.length === cardArray.length / 2) {
+            gameOver(true);
+        }
+    }
+    
     // ... (rest of your code)
 
 
